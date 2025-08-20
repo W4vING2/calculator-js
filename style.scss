@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #5e5d5d;
+}
+.wrapper{
+  height: 53vh;
+  width: 23vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: black;
+  padding: 10px;
+
+  &__second-row,
+  &__third-row,
+  &__fourth-row,
+  &__fifth-row,
+  &__first-row,
+  &__sixth-row{
+    width: 100%;
+    height: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@mixin btn($color){
+  color: white;
+  border: 1px solid $color;
+  border-radius: 50%;
+  padding-block: 10px;
+  padding-inline: 12px;
+  width: 45px;
+  height: 45px;
+  margin-inline: 10px;
+  text-align: center;
+  transition: all 0.4s;
+}
+@mixin btn-hover($color){
+  background-color: black;
+  border: 1px solid $color;
+}
+.light-btn{
+  background-color: #797777;
+  @include btn(#797777);
+  &:hover{
+    @include btn-hover(#797777)
+  }
+}
+.orange-btn{
+  background-color: orange;
+  @include btn(orange);
+  &:hover{
+    @include btn-hover(orange)
+  }
+}
+.dark-btn{
+  background-color: #4b4a4a;
+  @include btn(#4b4a4a);
+  &:hover{
+    @include btn-hover(#4b4a4a)
+  }
+}
+.wrapper__first-row__label{
+  width: 80%;
+  color: white;
+  text-align: end;
+  font-size: 25px;
+}
